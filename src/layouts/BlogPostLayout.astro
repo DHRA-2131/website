@@ -1,0 +1,140 @@
+---
+import MarkdownStyles from "components/MarkdownStyles.astro";
+import PageSection from "components/PageSection.astro";
+import PageLayout from "./PageLayout.astro";
+const { title, author, date, description, tags, thumbnail } =
+	Astro.props.page.data;
+
+const authorGithub = ((author as any)?.github) ?? (author as string);
+const authorName = ((author as any)?.name) ?? authorGithub;
+---
+
+<PageLayout
+	name="vexide"
+	banner={{
+		url: thumbnail?.url ?? "/images/logo_opengraph.png",
+		width: thumbnail ? 1280 : 280,
+		height: thumbnail ? 600: 280,
+		alt: thumbnail?.alt ?? "vexide Logo",
+		twitter_card: thumbnail ? "summary_large_image" : "summary",
+	}}
+	{title}
+	{description}
+>
+	<PageSection id="blog-content">
+		{
+			thumbnail && (
+				<div
+					class="post-backdrop"
+					style={`--thumbnail: url(${thumbnail.url})`}
+					slot="outer"
+				></div>
+			)
+		}
+		<h1 class="post-title">{title}</h1>
+		<div class="post-metadata">
+			<a
+				class="metadata-author"
+				href={`https://github.com/${authorGithub}`}
+				target="_blank"
+				rel="noreferrer noopeners"
+			>
+				<img
+					src={`https://github.com/${authorGithub}.png`}
+					alt={`${authorName}'s Avatar`}
+				/>
+				<span>
+					<strong>{authorName}</strong> • {
+						new Date(date).toLocaleDateString("en-US", { timeZone: 'UTC' })
+					}
+				</span>
+			</a>
+		</div>
+		<hr class="blog-post-separator" />
+		{
+			thumbnail && (
+				<img
+					class="post-thumbnail"
+					src={thumbnail.url}
+					alt={thumbnail.alt}
+				/>
+			)
+		}
+		<MarkdownStyles element="article" id="content">
+			<slot />
+		</MarkdownStyles>
+	</PageSection>
+</PageLayout>
+
+<style>
+	.post-backdrop {
+		position: absolute;
+		background: var(--thumbnail) center/cover no-repeat;
+		mask: linear-gradient(black, transparent);
+		width: 100%;
+		height: 650px;
+		inset: 0;
+		z-index: 0;
+		opacity: 0.1;
+	}
+
+	#blog-content > :global(.page-section-inner) {
+		position: relative;
+		z-index: 1;
+		padding-block: 48px;
+		max-inline-size: 960px;
+	}
+
+	.blog-post-separator {
+		margin-block: 24px;
+		border: none;
+		border-bottom: 1px solid var(--background-secondary);
+	}
+
+	.post-title {
+		font-size: 48px;
+		font-weight: 300;
+		margin: 0;
+		margin-block-end: 16px;
+	}
+
+	.post-thumbnail {
+		inline-size: 100%;
+		object-fit: cover;
+		border-radius: 4px;
+		border: 1px solid var(--background-secondary);
+		margin-block-end: 48px;
+	}
+
+	.post-metadata {
+		display: flex;
+		gap: 24px;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	.metadata-author {
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		font-size: 1.4rem;
+		color: var(--foreground-secondary);
+	}
+
+	.metadata-author strong {
+		border-bottom: 1px solid transparent;
+		font-weight: 600;
+		color: var(--foreground-primary);
+	}
+
+	.metadata-author:hover strong {
+		border-color: currentColor;
+	}
+
+	.metadata-author img {
+		border-radius: 50%;
+		margin-inline-end: 8px;
+		inline-size: 24px;
+		block-size: auto;
+	}
+</style>

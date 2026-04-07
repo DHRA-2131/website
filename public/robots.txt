@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vexide.dev/sitemap-index.xml

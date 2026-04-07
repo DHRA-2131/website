@@ -1,0 +1,65 @@
+---
+import Navigation from "components/Navigation.astro";
+import NavigationItem from "components/NavigationItem.astro";
+
+import Button from "components/Button.svelte";
+import { GITHUB_REPO_URL, DISCORD_INVITE_URL } from "config";
+import BaseLayout, { type Banner } from "./BaseLayout.astro";
+
+interface Props {
+	name?: string;
+	title?: string;
+	type?: string;
+	description?: string;
+	banner?: Banner;
+}
+
+const {
+	name = "vexide",
+	title = "vexide",
+	description = "Open-source Rust runtime for VEX robots.",
+	banner = {
+		url: "/images/logo_opengraph.png",
+		width: 280,
+		height: 280,
+		alt: "vexide logo",
+		twitter_card: "summary",
+	},
+} = Astro.props;
+---
+
+<BaseLayout {name} {title} {description} {banner}>
+	<Button class="skip-to-content" href="#content">Skip to content</Button>
+	<Navigation title="vexide">
+		<img
+			slot="logo"
+			width="36"
+			height="36"
+			src="/images/logo.svg"
+			alt="vexide Logo"
+		/>
+		<NavigationItem href="/docs/">Learn</NavigationItem>
+		<NavigationItem href="https://docs.rs/vexide/" external>API</NavigationItem>
+		<NavigationItem href="/releases/">Releases</NavigationItem>
+		<NavigationItem href="/blog/">Blog</NavigationItem>
+		<Fragment slot="actions">
+			<Button
+				variant="outlined"
+				href={DISCORD_INVITE_URL}
+				target="_blank"
+				rel="noreferrer noopener"
+			>
+				Discord
+			</Button>
+			<Button
+				variant="outlined"
+				href={GITHUB_REPO_URL}
+				target="_blank"
+				rel="noreferrer noopener"
+			>
+				GitHub
+			</Button>
+		</Fragment>
+	</Navigation>
+	<slot />
+</BaseLayout>
