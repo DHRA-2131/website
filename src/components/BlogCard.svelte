@@ -96,7 +96,7 @@
 		margin-block-end: 8px;
 		font-weight: 400;
 		font-size: 1.8rem;
-		font-family: var(--font-monospace);
+		font-family: var(--font-header);
 		color: var(--foreground-primary);
 	}
 

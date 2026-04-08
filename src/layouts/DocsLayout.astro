@@ -373,14 +373,16 @@ const [prevPage, nextPage] = await Promise.all([
     }
 
     .docs-header {
-        background-image: url("/images/placeholder_pattern.svg");
+        /* background-image: url("/images/placeholder_pattern.svg");
         background-size: 800px;
-        border-bottom: 1px solid var(--background-secondary);
+        border-bottom: 3px solid var(--background-secondary); */
+        background-color: var(--background-tertiary)
     }
 
     .docs-header h1 {
         align-self: flex-end;
         grid-area: title;
+        font-family: var(--font-header);
         font-weight: 400;
         font-size: 4.8rem;
         margin: 0;
@@ -429,18 +431,22 @@ const [prevPage, nextPage] = await Promise.all([
     }
 
     .docs-sidebar {
-        background-color: #262831;
-        border-right: 1px solid var(--background-secondary);
+        background-color: var(--background-secondary);
+        border-right: 2px solid var(--background-secondary);
+        border-left: 2px solid var(--background-secondary);
     }
 
     .docs-category-label {
         text-transform: uppercase;
         color: var(--foreground-primary);
-        font-family: var(--font-monospace);
-        font-weight: normal;
+        background-color: var(--background-secondary);
+        font-family: var(--font-header);
+        font-size: larger;
+        text-decoration: underline;
+        font-weight: bold;
         padding: 16px;
         display: flex;
-        border-bottom: 1px solid var(--background-secondary);
+        border-bottom: 2px solid var(--background-secondary);
     }
 
     .docs-category-label:not(:first-of-type) {
@@ -458,25 +464,28 @@ const [prevPage, nextPage] = await Promise.all([
     .docs-sidebar-item a {
         display: flex;
         align-items: center;
-        border-left: 2px solid transparent;
+        border-left: 4px solid transparent;
         text-decoration: none;
         color: var(--foreground-secondary);
         padding: 8px 16px;
     }
 
     .docs-sidebar-item:not(.selected) a:hover {
-        text-decoration: underline;
+        text-decoration:underline;
+        font-size: larger;
     }
 
     .docs-sidebar-item.selected a {
         font-weight: 600;
-        color: var(--foreground-primary);
+        font-size: larger;
+        color: var(--background-accent-yellow);
+        background-color: var(--background-accent-yellow-secondary);
         border-left-color: var(--background-accent-yellow);
     }
 
     .button.edit-on-github {
         grid-area: edit;
-        font-size: 14px;
+        font-size: 18px;
         padding: 8px 16px;
         margin-block-end: 16px;
     }

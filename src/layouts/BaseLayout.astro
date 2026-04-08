@@ -42,7 +42,7 @@ const {
 		<meta name="theme-color" content="#e54643" />
 
 		<!-- Preload Fonts -->
-		<link
+		<!-- <link
 			rel="preload"
 			href="/fonts/Manrope-VariableFont_wght.woff2"
 			as="font"
@@ -59,7 +59,14 @@ const {
 			href="/fonts/iosevka-fixed-extralight_latin-ext.woff2"
 			as="font"
 			crossorigin="anonymous"
+		/> -->
+		<link
+			rel="preload"
+			href="/fonts/FiraCode-Regular.woff2"
+			as="font"
+			crossorigin="anonymous"
 		/>
+
 
 		<!-- OpenGraph Page Metadata -->
 		<meta property="og:site_name" content={name} />
@@ -105,42 +112,64 @@ const {
 
 <style is:global>
 	@font-face {
-		font-family: "Iosevka";
-		font-style: ultralight;
-		font-weight: 200;
-		src: url("/fonts/iosevka-fixed-extralight_latin-ext.woff2")
+		font-family: "Fira Code";
+		font-style: normal;
+		font-weight: normal;
+		src: url("/fonts/FiraCode-Regular.woff2")
 			format("woff2");
 		unicode-range: U+0000-00FF;
 	}
 
 	@font-face {
-		font-family: "Iosevka";
-		font-style: normal;
+		font-family: "Inter Bold";
+		font-style: bold;
 		font-weight: normal;
-		src: url("/fonts/iosevka-fixed_latin-ext.woff2") format("woff2");
+		src: url("/fonts/InterDisplay-Bold.woff2")
+			format("woff2");
 		unicode-range: U+0000-00FF;
 	}
 
 	@font-face {
-		font-family: "Manrope";
-		font-weight: 200 800;
+		font-family: "Inter";
 		font-style: normal;
-		font-display: swap;
-		src: url("/fonts/Manrope-VariableFont_wght.woff2") format("woff2");
+		font-weight: normal;
+		src: url("/fonts/InterDisplay-Regular.woff2")
+			format("woff2");
+		unicode-range: U+0000-00FF;
+	}
+
+	@font-face {
+		font-family: "Domine Bold";
+		font-style: bold;
+		font-weight: normal;
+		src: url("/fonts/domine-bold-webfont.woff2")
+			format("woff2");
+		unicode-range: U+0000-00FF;
+	}
+
+	@font-face {
+		font-family: "Gelasio";
+		font-style: normal;
+		font-weight: normal;
+		src: url("/fonts/gelasio-v14-latin-regular.woff2")
+			format("woff2");
+		unicode-range: U+0000-00FF;
 	}
 
 	:root {
-		--base-hue: 20deg; /*228deg;*/
+		--base-hue: 19deg; /*228deg;*/
 		--accent-red-hue: 1deg;
 		--accent-green-hue: 125deg;
 		--accent-yellow-hue: 34deg;
 
-		/* --background-primary: hsl(var(--base-hue), 12%, 16%); */
-		--background-primary: hsl(var(--base-hue), 46%, 5%);
-		/* --background-secondary: hsl(var(--base-hue), 12%, 24%); */
-		--background-secondary: hsl(var(--base-hue), 48%, 16%);
+		--background-primary: hsl(var(--base-hue), 46%, 5%); /* Main Dark Background */
+		--background-secondary: hsl(var(--base-hue), 51%, 20%); /* Lightest Accent of Background */ 
+		--background-tertiary: hsl(var(--base-hue), 52%, 13%);  /* Slightly Darker than Background */
+
 		--background-accent-red: hsl(var(--accent-red-hue), 76%, 58%);
 		--background-accent-yellow: hsl(var(--accent-yellow-hue), 84%, 73%);
+		--background-accent-yellow-secondary: hsl(var(--accent-yellow-hue), 32%, 23%);
+		
 		--grid-color: hsl(var(--base-hue), 46%, 4%);
 
 		--foreground-primary: hsl(var(--base-hue), 27%, 88%);
@@ -151,14 +180,16 @@ const {
 		--foreground-accent-red: hsl(var(--accent-red-hue), 76%, 78%);
 		--foreground-accent-yellow: hsl(var(--accent-yellow-hue), 73%, 63%);
 
-		--font-monospace: "Iosevka", ui-monospace, Menlo, Monaco,
-			"Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
-			"Ubuntu Monospace", "Source Code Pro", "Fira Mono",
+		--font-monospace: "Fira Code", ui-monospace, Menlo, Monaco,
+			"Cascadia Mono", "Segoe UI Mono",  "Oxygen Mono", 
+			"Ubuntu Monospace", "Source Code Pro", 
 			"Droid Sans Mono", "Courier New", monospace;
 
-		--font-primary: "Manrope", system-ui, -apple-system, BlinkMacSystemFont,
+		--font-primary: "Fira Code", "Gelasio", "Inter",  "Manrope", system-ui, -apple-system, BlinkMacSystemFont,
 			"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
 			"Droid Sans", "Helvetica Neue", Arial, sans-serif;
+
+		--font-header: "Fira Code", "Domine Bold", "Inter Bold";
 
 		/* --breakpoint-large: 1280px;
 		--breakpoint-medium: 1024px;
@@ -203,15 +234,17 @@ const {
 	}
 
 	code {
-		/* tab-size: 4ch; */
+		tab-size: 2ch;
 		font-family: var(--font-monospace);
 	}
+
 
 	.navigation-actions .button {
 		padding-block: 8px !important;
 		padding-inline: 24px !important;
 		font-size: 1.4rem !important;
 	}
+	
 
 	.skip-to-content {
 		transition: none;

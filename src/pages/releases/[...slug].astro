@@ -199,9 +199,10 @@ const releaseMonths = categorizeReleasesByMonth(releases);
     }
 
     :global(#releases-header) {
-        background-image: url("/images/placeholder_pattern.svg");
+        /* background-image: url("/images/placeholder_pattern.svg");
         background-size: 800px;
-        border-bottom: 1px solid var(--background-secondary);
+        border-bottom: 1px solid var(--background-secondary); */
+        background-color: var(--background-tertiary);
     }
 
     :global(#releases > .page-section-inner) {
@@ -227,7 +228,7 @@ const releaseMonths = categorizeReleasesByMonth(releases);
         font-weight: 600;
         margin-block-end: 24px;
         padding-block-end: 16px;
-        border-block-end: 1px solid var(--background-secondary);
+        border-block-end: 1px solid var(--background-accent-yellow);
         display: flex;
     }
 
@@ -257,7 +258,7 @@ const releaseMonths = categorizeReleasesByMonth(releases);
         padding: 0;
         padding-inline-start: 36px;
         margin-inline-start: 8px;
-        border-inline-start: 1px dashed var(--background-secondary);
+        border-inline-start: 1px dashed var(--background-accent-yellow);
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -266,7 +267,7 @@ const releaseMonths = categorizeReleasesByMonth(releases);
 
     .release {
         position: relative;
-        border: 1px solid var(--background-secondary);
+        border: 1px solid var(--background-accent-yellow-secondary);
         border-radius: 4px;
         overflow: hidden;
     }
@@ -296,8 +297,8 @@ const releaseMonths = categorizeReleasesByMonth(releases);
 
     .release-header {
         padding: 12px 24px;
-        border-bottom: 1px solid var(--background-secondary);
-        background-color: var(--grid-color);
+        border-bottom: 1px solid var(--background-accent-yellow-secondary);
+        background-color: var(--background-tertiary);
     }
 
     .release-title {

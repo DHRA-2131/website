@@ -82,9 +82,10 @@ const { element: Element = "div", class: className, ...rest } = Astro.props;
     }
 
     .markdown-body :global(h1) {
+        font-family: var(--font-header);
         font-size: 3.6rem;
         font-weight: 300;
-        margin-block-start: 72px;
+        margin-block-start: spx;
     }
 
     .markdown-body :global(pre) {

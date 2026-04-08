@@ -3,5 +3,6 @@
 	"exclude": ["dist"],
 	"compilerOptions": {
 		"baseUrl": "./src/",
-	}
+	},
+	"featureSettings": "'smcp' 2"
 }
