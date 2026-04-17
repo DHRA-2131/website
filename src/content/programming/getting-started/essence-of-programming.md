@@ -1,14 +1,14 @@
 ---
+title: 'Essence Of Programming'
 description: 'Description: Essentially how to Pseudo code'
 ---
 
-# Essence Of Programming
+## What is Programming?
+>[!NOTE]
+> Computer programming or coding is the composition of sequences of instructions, called programs, that computers can follow to perform tasks. It involves designing and implementing algorithms, step-by-step specifications of procedures, by writing code in one or more programming languages.
+> - (Wikipedia. Accessed March, 2026.)
 
-### What is Programming?
-
-> Computer programming or coding is the composition of sequences of instructions, called programs, that computers can follow to perform tasks. It involves designing and implementing algorithms, step-by-step specifications of procedures, by writing code in one or more programming languages. - (Wikipedia. Accessed March, 2026.)
-
-### Programming Languages:
+## Programming Languages:
 
 _Note: This is not an all inclusive list. These are mostly languages I have used for vex projects._
 
@@ -18,7 +18,7 @@ _Note: This is not an all inclusive list. These are mostly languages I have used
 * **Python** - This language was my first language and by far the easiest to learn. After multiple years of programming, python is literally easier to use than English. That simplicity comes at the cost of control over the system, leading to the language being significantly slower. Python's main advantage is it's cohesive libraries and pip package manager.
 * **Type Script** - I hate this language, but used it to produce my very own Visual Studio Code extensions. Checkout the _2131H Extension Pack_ and _2131H Vexide Toolset_ in the extension tab for VSCode!
 
-### Mark Up Languages:
+## Mark Up Languages:
 
 _Note: These are different than Programming Languages!_
 
@@ -26,7 +26,7 @@ _Note: These are different than Programming Languages!_
 * **HTML** - This is \*NOT\* a programming language. It is a Hyper Text Mark-Up Language. It is used to make pretty websites.
 * **TeX** - This language is used to display math formulas. Desmos, Wolfram Alpha, and ChatGPT use LaTeX and you probably didn't even know!
 
-### General Programming Rules:
+## General Programming Rules:
 
 1. Code executes from _top to bottom_ and _left to right_
 2. The computer only does exactly what you tell it to do. The computer cannot and does not guess your intent.
@@ -47,32 +47,18 @@ _Note: These are different than Programming Languages!_
 
 _Note: If these seem like obvious or simple ideas, then I ask you to explain why they are always problems. Don't over think it, do your best!_
 
-### Biography of a Code's Lifetime:
+## Biography of a Code's Lifetime:
 
-{% stepper %}
-{% step %}
-**Program is Created (collection of files).**
-{% endstep %}
+1. Program is Created (collection of files).
 
-{% step %}
-**Code is added to Program (writing contents of files).**
-{% endstep %}
+1. Code is added to Program (writing contents of files).
 
-{% step %}
-**Code is compiled to a binary (building contents of files).**
-{% endstep %}
+1. Code is compiled to a binary (building contents of files).
 
-{% step %}
-**Binary is uploaded to device (moving binary to execution source).**
-{% endstep %}
+1. Binary is uploaded to device (moving binary to execution source).
 
-{% step %}
-**Binary is pulled into memory (getting ready for execution).**
-{% endstep %}
+1. Binary is pulled into memory (getting ready for execution).
 
-{% step %}
-**Binary is executed by CPU (the french revolution would be proud)!**
-{% endstep %}
-{% endstepper %}
+1. Binary is executed by CPU (the french revolutionaries would be proud)!
 
 _Not an AD: Is a language you love to use missing? Are you a_ `.js` :nauseated\_face: _enjoyer? Learn to contribute and add your own thoughts!_ :smile:

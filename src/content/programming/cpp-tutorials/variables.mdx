@@ -1,0 +1,71 @@
+---
+title: "Variables"
+description: 'Description: Compiled Cherno videos for you to learn from!'
+---
+
+import EmbedVideo from "components/EmbededVideo.astro";
+
+***
+
+## Variable Video Explanation:
+
+<EmbedVideo src="https://www.youtube.com/embed/zB9RI8_wExo?si=o5xWbY4ifzo7mDBl" ></EmbedVideo>
+
+## Simplified Variable Reference Sheet:
+| Type Name | Keyword | Size (Bytes) | Size (Numerical) | Operations | Conventional interpretation |
+|------------|--------|--------------|------------------|------------|------------------------------|
+| Void / Null / None | `void` | 0 | 0 | None | The idea of nothing in code form. Example: `void functionName(/*params*/);` |
+| Integer | `int` | 4 Bytes | Max: `2147483647` Min: `-2147483648` | `*, /, +, -, %` | Whole numbers without decimals (like math integers). |
+| Floating Point Number | `float` | 4 Bytes | Max: `3.40282347e+38` Min: `1.17549435e-38` Also: `inf`, `-inf`, `NaN` | `*, /, +, -, %` | Decimal numbers. VEX brains typically use floats, so doubles are rarely needed. |
+| Character | `char` | 1 Byte | `0 to 255` | `*, /, +, -, %` | Represents a character using ASCII-like encoding. See [Extended ASCII](https://en.wikipedia.org/wiki/Extended_ASCII). |
+***
+
+## Constant Keyword (`const`):
+
+<EmbedVideo src="https://www.youtube.com/embed/watch?index=33&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&v=4fJBrditnJU" ></EmbedVideo>
+
+
+## Example of the `const` keywords in a Vex Project!
+
+Source can be found [here](https://github.com/MerpCat500/Fun-Project-of-Doom/blob/main/include/2131H/Chassis/DifferentialChassis.hpp).&#x20;
+
+```cpp
+// Structure that stores physical properties about a robot (These don't normally change)
+struct PhysicalProperties
+{
+  // Note: full variable names!
+  //* Physical Size of robot
+  const float drivelength;  // In inches
+  const float drivewidth;   // In inches
+  
+  //* Useful Physical Information
+  const float trackwidth;   // In inches
+  const float tracklength;  // In inches
+
+  //* Important Wheel Characteristics
+  const float gearing;        // Scalar
+  const float wheelDiameter;  // Diameter of wheel
+
+  // Total Amount of Motors on Drivetrain
+  const float motorWattage;  // Wattage of motors
+
+  // Theoretical maximum values 
+  // (These can be computed from the variables, but are commonly used so it's worth caching them)
+  const float maxVelocity;  // Max Velocity of Drivetrain
+  const Angle<Radians> maxAngularVelocity;  // Max angular velocity of drivetrain
+  
+  /* Constructor Omitted to Shorten Codeblock */
+  // This would assign values to the variables inside the struct
+};
+```
+
+***
+
+## `static` Keyword:
+
+<EmbedVideo src="https://www.youtube.com/embed/watch?index=21&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&v=f3FVU-iwNuA" ></EmbedVideo>
+
+<EmbedVideo src="https://www.youtube.com/embed/watch?index=48&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&v=f7mtWD9GdJ4" ></EmbedVideo>
+
+
+_Not an AD: Please add more to these things, people be confused. Contribute today!_ :smile:

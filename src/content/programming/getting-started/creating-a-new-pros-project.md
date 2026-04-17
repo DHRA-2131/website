@@ -1,14 +1,13 @@
 ---
+title: "Creating a New PROS Project"
 description: 'Description: How to create a new project for vex!'
 ---
 
-# Creating a New PROS Project
-
-### 1. Create a New Empty Project
+## 1. Create a New Empty Project
 
 **Graphical Method:**&#x20;
 
-1. Go to the PROS Tab in the left ribbon <img src="../../.gitbook/assets/image (1) (1).png" alt="" data-size="line">
+1. Go to the PROS Tab in the left ribbon
 2. Under `Conductor` click `Create Project`
 3. Select Directory for project folder, then name project (this will create a new folder containing your code named with the project)
 4. Select a kernal for the project to use. `latest` is generally recommended, but has occasionally been broken.
@@ -35,9 +34,9 @@ pros conductor new-project [OPTIONS] PATH [[v5|cortex]] [VERSION]
 
 To access options, use the `--help` flag in any pros command.&#x20;
 
-### 2. Basic Explanation of Empty Project
+## 2. Basic Explanation of Empty Project
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/images/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * If you installed clangd, you will see `.cache/~` after opening a C/C++ file. This stores data for clangd to work.&#x20;
 * `.d/` - Stores the directory information (May not be present on windows)
@@ -69,9 +68,8 @@ _Note: if you want to use Fira Code font you will need to install it, instructio
 
 \*\* Suggested `.clang-format`. Using this will format your code like below.
 
-_Note: If you want to mess around with your own styling, visit_ [_here_](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)_._
+_Note: If you want to mess around with your own styling, visit _[_here_](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)_._
 
-{% code expandable="true" %}
 ```bash
 BasedOnStyle: Google
 Language: Cpp
@@ -98,9 +96,7 @@ AlignAfterOpenBracket: AlwaysBreak
 BinPackArguments: false
 BinPackParameters: false
 ```
-{% endcode %}
 
-{% code title="src/main.cpp" lineNumbers="true" expandable="true" %}
 ```cpp
 void opcontrol()
 {
@@ -133,6 +129,5 @@ void opcontrol()
   }
 }
 ```
-{% endcode %}
 
 _Not an AD: Do you find it frustrating that my_ `.clang-format` _file puts brackets on a new line? Consider contributing by adding your own styles!_ :smile:

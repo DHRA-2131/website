@@ -60,3 +60,94 @@ export const DOCS_SIDEBAR = {
 
 	]
 };
+
+export const PROGRAMMING_SIDEBAR = {
+	"Getting Started": [
+		{
+			title: "New Project",
+			children: [
+				"getting-started/creating-a-new-pros-project",
+				"getting-started/essence-of-programming", 
+				"getting-started/how-fix-clang", 
+				"getting-started/installing-an-ide", 				 
+				"getting-started/using-source-control", 
+			]
+		}
+	], 
+	
+	"Writing Code": [
+		{
+			title: "Creating Files",
+			children: [
+				"cpp-tutorials/creating-new-files/header-files",
+				"cpp-tutorials/creating-new-files/source-files",
+			]
+		},	
+		{
+			title: "C++ Tutorials",
+			children: [
+				"cpp-tutorials/basic-cpp-syntax",
+				"cpp-tutorials/comments",
+				"cpp-tutorials/how-cpp-works",
+				"cpp-tutorials/installing-cpp",
+				"cpp-tutorials/variables",
+				"cpp-tutorials/print-statements",
+				"cpp-tutorials/conditional-statements",
+				"cpp-tutorials/loops",
+				"cpp-tutorials/functions",
+				"cpp-tutorials/vectors-and-arrays",
+				"cpp-tutorials/namespaces",
+				"cpp-tutorials/pointing",
+				"cpp-tutorials/classes",
+			]
+		},	
+	],
+	"Pros Specific": [
+		{
+			title: "Multi-threading",
+			children: [
+				"pros-specific/threading",
+			]	
+		},	
+	],
+	"Control Theory": [
+		{
+			title: "Feedback Controllers",
+			children: [
+				"control-theory-for-vex/feedback-controllers/feedback-controller",
+				"control-theory-for-vex/feedback-controllers/pid-controller",
+			],
+		},
+		{
+			title: "Localization Methods",
+			children: [
+				"control-theory-for-vex/localization/odometry",
+				"control-theory-for-vex/localization/monte-carlo-localization",
+				"control-theory-for-vex/localization/kalman-filtering",
+				"control-theory-for-vex/localization/vision-odometry",
+			]
+		},
+		{
+			title: "Path Following",
+			children: [
+				"control-theory-for-vex/path-following/pure-pursuit",
+				"control-theory-for-vex/path-following/ramsette",
+			]
+		},
+	],
+	"Resorce Bank": 
+	[
+		{
+			title: "Visual Media",
+			children: [
+				"random-club-resources/math-youtube",				
+			]
+		},
+		{
+			title: "Graphs",
+			children: [
+				"random-club-resources/desmos",
+			]
+		},
+	],
+}

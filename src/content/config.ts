@@ -28,6 +28,14 @@ const docs2 = defineCollection({
     })
 });
 
+const programming = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        links: z.record(z.string()).optional(),
+        draft: z.boolean().optional(),
+    })
+})
 
 const releases = defineCollection({
     type: 'content',
@@ -40,6 +48,7 @@ const releases = defineCollection({
 
 export const collections = {
     docs2,
+    programming,
     blog,
     releases,
 };

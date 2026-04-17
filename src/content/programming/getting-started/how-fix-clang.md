@@ -1,19 +1,18 @@
 ---
+title: 'How Fix Clang'
 description: 'Description: Clang easily dies with PROS, but it is easy to fix.'
 ---
 
-# How Fix Clang
+If clang is broken for your project, then follow the steps listed below. You will know clangd is not happy if errors are everywhere, despite the code compiling (`pros make all` returns successfully). You may also see a error on the first line of every file you open, this is a problem with clang not understanding your file structure.
 
-If clang is broken for your project, then follow the steps listed below. You will know clangd is not happy if errors are everywhere, despite the code compiling (`pros make all` returns successfully). You may also see a error on the first line of every file you open, this is a problem with clang not understand your file structure.
+## Step 1: Open a New Integrated Terminal
 
-### Step 1: Open a New Integrated Terminal
-
-#### Create a new integrated terminal:&#x20;
+### Create a new integrated terminal:&#x20;
 
 * If you've installed PROS to the path of your computer then you can just open a new terminal (powershell, bash, etc) by `` ctrl + shift + ` ``.&#x20;
 * Otherwise, press `ctrl + shift + p` and type `PROS: Integrated Terminal`. You can also access this graphically through the Pros Icon.
 
-### Step 2: Check the Code Compiles
+## Step 2: Check the Code Compiles
 
 In your integrated terminal, type: `pros make all`. This will run two commands. Firstly, `pros make clean` which removes the `/bin` files, enforcing the build to make fresh binaries. Second, it will run `pros make` which builds the project. You can tell if the project builds if it creates both a cold and hot package.&#x20;
 
@@ -31,7 +30,6 @@ andrew@debian:~/Code/Robotics/Pros/Tutorial$ pros make all
 
 **Example of a project that compiles:**
 
-{% code expandable="true" %}
 ```bash
 Cleaning project
 Creating cold package with libc,liblvgl,libm,libpros [OK]
@@ -48,13 +46,13 @@ Section sizes:
 Creating cold package binary for VEX EDR V5 [DONE]
 Creating bin/hot.package.bin for VEX EDR V5 [DONE]
 ```
-{% endcode %}
 
 **Example of a project that fails to build:**
 
 _Note: The build output tells you where the project failed, in this case line 83, column 22 (in the `opcontrol` function). It will also give you a reason for why the program failed. I added an asterisk where there should have been and integer so the project couldn't be built._
 
-<pre class="language-bash" data-expandable="true"><code class="lang-bash">Cleaning project
+```bash
+Cleaning project
 Creating cold package with libc,liblvgl,libm,libpros [OK]
 Stripping cold package  [DONE]
 Section sizes:
@@ -62,13 +60,15 @@ Section sizes:
 2.15MB  4.74KB  57.24MB  59.39MB 3b62957 bin/cold.package.elf
 Compiled src/main.cpp [ERRORS]
 make: *** [common.mk:284: bin/main.cpp.o] Error 1
-<strong>src/main.cpp: In function 'void opcontrol()':
-</strong><strong>src/main.cpp:83:22: error: invalid type argument of unary '*' (have 'int')
-</strong><strong>   83 |     pros::lcd::print(*
-</strong><strong>      |                      ^
-</strong><strong>   84 |         0,
-</strong><strong>      |         ~             
-</strong>ERROR - pros.cli.build:make - Failed to make project: Exit Code 2 - pros-cli version:3.5.6
+
+src/main.cpp: In function 'void opcontrol()':
+src/main.cpp:83:22: error: invalid type argument of unary '*' (have 'int')
+   83 |     pros::lcd::print(*
+      |                      ^
+   84 |         0,
+      |         ~             
+ 
+ERROR - pros.cli.build:make - Failed to make project: Exit Code 2 - pros-cli version:3.5.6
 PROS-CLI Version:  3.5.6
 PROS-Kernel Version: 4.2.2
 ╭─ Error ────────────────────────────────────────────────────────────────────────────────╮
@@ -78,9 +78,9 @@ PROS-Kernel Version: 4.2.2
 Sentry is attempting to send 1 pending events
 Waiting up to 2 seconds
 Press Ctrl-C to quit
-</code></pre>
+```
 
-### Step 3: Finally Getting Rid of the Clang Errors
+## Step 3: Finally Getting Rid of the Clang Errors
 
 If your program builds, continue with Step 3. Otherwise, fix broken code before continuing.&#x20;
 

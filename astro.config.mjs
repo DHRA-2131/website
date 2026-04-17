@@ -16,15 +16,24 @@ import cloudflare from '@astrojs/cloudflare';
 
 import mdx from '@astrojs/mdx';
 
+import remarkEmoji from "remark-emoji";
+import remarkFootnotes from "remark-footnotes";
+
+import { rehypeTwemoji } from "rehype-twemoji";
+
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://vexide.dev",
   trailingSlash: "always",
   integrations: [sitemap(), svelte(), markdown(), mdx()],
 
+
   markdown: {
+    remarkPlugins: [remarkEmoji, remarkFootnotes],
     rehypePlugins: [
       rehypeSlug,
+      rehypeTwemoji,
       [rehypeAutolinkHeadings, { behavior: "append" }],
       [rehypeGithubAlerts, {
         alerts: [
@@ -85,6 +94,7 @@ export default defineConfig({
       }],
     ],
     shikiConfig: {
+      theme:"github-dark-dimmed",
       transformers: [
         shakuCodeAnnotateShikiTransformer(),
         transformerTitle(),

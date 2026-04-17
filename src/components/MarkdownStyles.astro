@@ -19,8 +19,29 @@ const { element: Element = "div", class: className, ...rest } = Astro.props;
         line-height: 2;
     }
 
+    .markdown-body :global(img[data-twemoji]) {
+        width: 2rem !important;
+        height: 2rem !important;
+        vertical-align: middle;
+        display: inline !important;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .markdown-body :global(.footnote-ref) {
+        color: var(--background-accent-yellow);
+        font-weight: bold;
+    }
+
+    .markdown-body :global(.footnote-backref) {
+        margin-left: 8px;
+        text-decoration: none;
+    }
+
     .markdown-body :global(code) {
-        background: var(--background-secondary);
+        background: var(--background-accent-yellow-secondary);
+        padding-inline: 3px;
+        border-radius: 2px;
     }
 
     .markdown-body :global(h1),
@@ -35,13 +56,39 @@ const { element: Element = "div", class: className, ...rest } = Astro.props;
         font-family: var(--font-monospace);
         font-weight: 400;
     }
-
+    
     .markdown-body :global(h1) {
         page-break-after: avoid;
     }
 
     .markdown-body :global(h2) {
         margin-block-start: 48px;
+        font-weight: bold;
+        color: var(--background-accent-yellow-light);
+    }
+
+    .markdown-body :global(strong) {
+        font-size:large;
+        color: var(--background-accent-yellow);
+    }
+
+    .markdown-body :global(li) {
+        margin-block-end: 8px;        
+    }
+
+    .markdown-body :global(ul) {
+        list-style-type:square;
+    },
+    .markdown-body :global(ol) {
+        padding-inline-start: 24px;
+    }
+    .markdown-body :global(ul li::marker) {
+        color: var(--background-accent-yellow);
+    },
+
+    .markdown-body :global(ol li::marker) {
+        font-weight: bold;
+        color: var(--background-accent-yellow);
     }
 
     .markdown-body :global(.icon-link) {
@@ -92,8 +139,9 @@ const { element: Element = "div", class: className, ...rest } = Astro.props;
         page-break-inside: avoid;
         margin-block: 24px;
         padding: 24px;
-        border: 1px solid var(--background-secondary);
-        background-color: var(--background-primary) !important;
+        border: 2px solid var(--background-accent-yellow);
+        background-color: #22272e !important;
+
         border-radius: 4px;
         line-height: 1.5;
     }
@@ -372,17 +420,10 @@ const { element: Element = "div", class: className, ...rest } = Astro.props;
     }
 
     .markdown-body :global(ul) {
-        list-style-type: square;
+        
     }
 
-    .markdown-body :global(li) {
-        margin-block-end: 8px;
-    }
-
-    .markdown-body :global(ul),
-    .markdown-body :global(ol) {
-        padding-inline-start: 24px;
-    }
+    
 
     .markdown-body :global(a) {
         color: var(--foreground-accent-red);

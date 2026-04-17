@@ -15,14 +15,14 @@ interface Props {
 }
 
 const {
-	name = "vexide",
-	title = "vexide",
-	description = "Open-source Rust runtime for VEX robots.",
+	name = "Davis High Robotics",
+	title = "Davis High Robotics",
+	description = "Davis High Robotics Academiac",
 	banner = {
-		url: "/images/logo_opengraph.png",
+		url: "/images/Davis_logo.jpg",
 		width: 280,
 		height: 280,
-		alt: "vexide logo",
+		alt: "davis logo",
 		twitter_card: "summary",
 	},
 } = Astro.props;
@@ -30,13 +30,13 @@ const {
 
 <BaseLayout {name} {title} {description} {banner}>
 	<Button class="skip-to-content" href="#content">Skip to content</Button>
-	<Navigation title="vexide">
+	<Navigation title="DHS ROBOTICS">
 		<img
 			slot="logo"
 			width="36"
 			height="36"
-			src="/images/logo.svg"
-			alt="vexide Logo"
+			src="/images/Davis_logo.jpg"
+			alt="Davis Logo"
 		/>
 		<NavigationItem href="/docs2/">Learn</NavigationItem>
 		<NavigationItem href="/programming/">Programming</NavigationItem>
