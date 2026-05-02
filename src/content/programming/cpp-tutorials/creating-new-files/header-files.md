@@ -107,15 +107,15 @@ Create a Folder to separate custom headers from PROS, LVGL, and other installed 
 * `<Team Name>`&#x20;
 * `$(Author Name)Lib`
 
-<figure><img src="/images/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/image (15).png`} alt=""><figcaption></figcaption></figure>
 
 **Create a Header File**
 
 Create a header file with an appropriate name. Follow a convention when naming files, `camelCase` and `snake_case` are common styles. Give the file the correct file extension: if the header file features any C++ features use `.hpp` otherwise, use `.h`. The newly created file will be completely empty.
 
-<figure><img src="/images/assets/image (16).png" alt=""><figcaption><p>New File by Right Clicking on Folder.</p></figcaption></figure>
+<figure><img src={`${base}images/assets/image (16).png`} alt=""><figcaption><p>New File by Right Clicking on Folder.</p></figcaption></figure>
 
-<figure><img src="/images/assets/image (17).png" alt=""><figcaption><p>New File by using the Linux <code>touch</code> Command</p></figcaption></figure>
+<figure><img src={`${base}images/assets/image (17).png`} alt=""><figcaption><p>New File by using the Linux <code>touch</code> Command</p></figcaption></figure>
 
 ## Safe Guarding the Header File
 

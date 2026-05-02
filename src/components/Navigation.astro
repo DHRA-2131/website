@@ -1,12 +1,13 @@
 ---
 const { title = "" } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <header class="navigation">
 	<nav class="navigation-inner">
 		{
 			title && (
-				<a href="/" class="navigation-title">
+				<a href={`${base}website/`} class="navigation-title">
 					<slot name="logo" />
 					<span>{title}</span>
 					<slot name="title" />

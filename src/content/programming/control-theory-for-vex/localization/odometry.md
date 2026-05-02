@@ -13,7 +13,7 @@ _Note: It can be even betterer, but that's for the next couple sections!_
 
 This is the most simple form of odometry that uses some simple trigonometry to calculate a change in position. Given a distance we have traveled (read from either drive motors or an odometry wheel) and the change in heading (read from an Gyro sensor), we can calculate a delta x and y position for every timestep.
 
-<div align="center"><figure><img src="/images/assets/image (2).png" alt="" width="292"><figcaption></figcaption></figure></div>
+<div align="center"><figure><img src={`${base}images/assets/image (2).png`} alt="" width="292"><figcaption></figcaption></figure></div>
 
 Based on this triangle, we can use trigonometry to calculate our change in x and y position over a timestep using the equations below:
 
@@ -38,7 +38,7 @@ To begin, we must set up a circular arc representing our motions. We will use th
 * $$\theta_{final}$$ - The heading at the end of the timestep
 * $$\Delta \theta$$ - The change in heading during the timestep
 
-<div data-full-width="false"><figure><img src="/images/assets/image (19).png" alt=""><figcaption><p>Diagram of the robot's motion as a circular arc</p></figcaption></figure></div>
+<div data-full-width="false"><figure><img src={`${base}images/assets/image (19).png`} alt=""><figcaption><p>Diagram of the robot's motion as a circular arc</p></figcaption></figure></div>
 
 After representing the robot's motion over a timestep as an arc, it still isn't apparent how to proceed to get the $$\Delta x$$ and $$\Delta y$$ positions of the robot during the timestep. We need a target of something to solve for. That's where the chord drawn on the figure comes in handy, as if we find the distance between our starting point and end point, we can use basic trigonometry to get our robots change in x and y positions.
 
@@ -60,7 +60,7 @@ $$
 
 With simple algebra, we have converted the arc length equation into an equation that allows us to calculate the radius of the arc. Now, we are able to move on to calculating the chord distance.
 
-<figure><img src="/images/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/image (21).png`} alt=""><figcaption></figcaption></figure>
 
 First, we can take part of the other diagram, making a triangle as shown above. Now, we can use very basic trigonometry to calculate our chord length with the equations below:
 
@@ -70,7 +70,7 @@ $$
 
 Now we have the distance of a chord that approximates our robot's movement! We can then use simple trigonometry to convert that into $$\Delta x$$ and $$\Delta y$$ values globally.&#x20;
 
-<figure><img src="/images/assets/image (2).png" alt="" width="292"><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/image (2).png`} alt="" width="292"><figcaption></figcaption></figure>
 
 We can use this idea again, where the distance is the hypotenuse of a triangle, and given a heading, we can get our global $$\Delta x$$ and $$\Delta y$$ values. The only problem is that it isn't initially clear what value to use for $$\theta$$ as when moving along an arc, we didn't travel at a constant heading. There isn't a nice way to determine what angle the chord is facing based only off of the initial or final heading. However, if we average our initial and final headings, we can get a good approximation of the direction we are facing. Thus, we can use the following to calculate our position:
 

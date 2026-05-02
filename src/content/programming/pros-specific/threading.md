@@ -11,13 +11,13 @@ CPUs are _great_ at doing exactly as they’re told — their sole purpose is to
 
 Let’s say you’re at the store and need to grab a few things from some different aisles.
 
-<figure><img src="/images/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/image.png`} alt=""><figcaption></figcaption></figure>
 
 When finding these items, you can’t be in two different aisles at once, so you seek out each item on the list individually. CPUs largely work in the same way. On a system with one _logical core_ you can only execute one instruction at a time.
 
 When we run one function after another like this, we are executing them _synchronously_, where each function blocks the next from running until it has finished executing.
 
-<figure><img src="/images/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/image (1).png`} alt=""><figcaption></figcaption></figure>
 
 ## Scheduling and Concurrency:
 
