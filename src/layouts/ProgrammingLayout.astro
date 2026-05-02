@@ -76,8 +76,8 @@ const [prevPage, nextPage] = await Promise.all([
             alt="Davis_logo.png"
         />
         <span slot="title" class="navigation-docs-chip">Docs</span>
-        <NavigationItem selected href="/programming/">Programming Documentation</NavigationItem>
-        <NavigationItem href="/learn/">General Documentation</NavigationItem>
+        <NavigationItem selected href="{`${import.meta.env.BASE_URL}programming/`}">Programming Documentation</NavigationItem>
+        <NavigationItem href="{`${import.meta.env.BASE_URL}learn/`}">General Documentation</NavigationItem>
         <DocsSearch slot="right" client:load />
         <Fragment slot="mobile">
             {
