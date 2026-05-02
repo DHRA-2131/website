@@ -60,7 +60,7 @@ $$
 
 With simple algebra, we have converted the arc length equation into an equation that allows us to calculate the radius of the arc. Now, we are able to move on to calculating the chord distance.
 
-<figure><img src="/images/assets/odometry-chord-length.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/website/images/assets/odometry-chord-length.png" alt=""><figcaption></figcaption></figure>
 
 First, we can take part of the other diagram, making a triangle as shown above. Now, we can use very basic trigonometry to calculate our chord length with the equations below:
 
