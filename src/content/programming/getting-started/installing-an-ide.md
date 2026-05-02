@@ -17,11 +17,11 @@ This tutorial will show you how to install the PROS library, Pros toolchain, and
 
 Upon launching VSCode you should see a blank workspace and profile.
 
-<figure><img src={`${base}images/assetsvscode-welcome.png`} alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/vscode-welcome.png`} alt=""><figcaption></figcaption></figure>
 
 Head to the settings (Gear symbol in the bottom left corner) and hover over the profiles option to select profile.&#x20;
 
-<figure><img src={`${base}images/assetsvscode-select-profile.png`} alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/vscode-select-profile.png`} alt=""><figcaption></figcaption></figure>
 
 You should now see the option to create a new profile. Name the new profile `Pros`. Make sure to activate the profile, then you can close the tab (top left) or press `ctrl + w`.
 
@@ -29,7 +29,7 @@ You should now see the option to create a new profile. Name the new profile `Pro
 
 Click on the extension tab located in the farthest left ribbon (Looks like multiple squares mashed together). Search for `2131H Extension Pack` and click install. This will install all the extensions required to download to a vex brain and program in C++. It will also install some extra themes and clangd.
 
-<figure><img src={`${base}images/assets2131H-extension-pack.png`} alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/2131H-extension-pack.png`} alt=""><figcaption></figcaption></figure>
 
 **Install Pros (Required)**
 
@@ -39,7 +39,7 @@ Press `ctrl + shift + p` and type: `PROS: Verify PROS Installation`. This will r
 
 Press `ctrl + shift + p` to open the Command Pallet. This is one way of accessing different features of your installed extensions. Type: `clangd: Download language server`. This will prompt you to install clangd, which provides auto-complete, auto-formatting, linting, and error highlighting. For more information on how to use clang and fix clang, visit [How to Fix Clang](../how-fix-clang/ "mention").
 
-<figure><img src={`${base}images/assets2131H-extension-pack-clang.png`} alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/2131H-extension-pack-clang.png`} alt=""><figcaption></figcaption></figure>
 
 **Install Git (Highly Suggested, Please Use Version Control :pray:)**
 

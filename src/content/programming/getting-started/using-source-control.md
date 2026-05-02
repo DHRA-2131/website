@@ -40,34 +40,34 @@ _Note: cloning code from a preexisting repository on Github should probably be d
 
 **Publishing Code to Github Repository**
 
-* Access the source control panel in VSCode. You can use `ctrl + shift + g` to open source control. Alternatively, you can access the source code panel by clicking on the icon located in the left ribbon (Icon: <img src={`${base}images/assetssource-control.png`} alt="" data-size="line">).
+* Access the source control panel in VSCode. You can use `ctrl + shift + g` to open source control. Alternatively, you can access the source code panel by clicking on the icon located in the left ribbon (Icon: <img src={`${base}images/assets/source-control.png`} alt="" data-size="line">).
 * Click the Publish to GitHub Button. This will prompt you to publish either a public or private repository of your naming to your account. _Note: Using this method will upload to your account, requiring you to transfer ownership of your repository to DHRA-2131 if you want to include the repository as part of the club's organization._
 
-<figure><img src={`${base}images/assetssource-control-create-repository.png`} alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/source-control-create-repository.png`} alt=""><figcaption></figcaption></figure>
 
 **Stage Changes and Commit**
 
 Upon Changing a file, it will be listed in the changes section. To Stage a file's changes, hover over the file and click the plus (`+`). This will add that file to the staged changes. You can also hover over `Changes` to stage all your changes at once.
 
-<figure><img src={`${base}images/assetssource-control-stage-changes.png`} alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/source-control-stage-changes.png`} alt=""><figcaption></figcaption></figure>
 
 _Note: If your source control panel doesn't look like mine, click the three dots (`...`) across from `SOURCE CONTROL`, then make sure there is a check by all three options. If there isn't click the option to show it._
 
 To write your changes to a commit, type a commit message in the text box and press the ":white\_check\_mark: Commit" Button. Notice this doesn't push your code to the remote (`origin/main`) but makes a local (`main`) version history change that you can go back to if you break something.
 
-<figure><img src={`${base}images/assetssource-control-commit.png`} alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/source-control-commit.png`} alt=""><figcaption></figcaption></figure>
 <!-- 
-<figure><img src={`${base}images/assetssource-control-create-repository.png`} alt=""><figcaption></figcaption></figure> -->
+<figure><img src={`${base}images/assets/source-control-create-repository.png`} alt=""><figcaption></figcaption></figure> -->
 
 **Push, Pull, and Synchronize Changes**
 
 If you have just written a commit, you can press the "🔄 Sync Changes" button. This will push your commit to the remote on Github. If you write a change after making a commit you will not be able to Sync until you get rid of all changes by discarding or adding them to a new commit. Notice this updates `main` to be the same as `origin/main`.
 
-<figure><img src={`${base}images/assetssource-control-sync-changes.png`} alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/source-control-sync-changes.png`} alt=""><figcaption></figcaption></figure>
 
 If you don't want to `push` and `pull` at the same time, then click the three dots by your repository name to find more options. `Fetch` will check if the remote (Github) has any new changes. It will not edit the local instance or the remote.
 
-<figure><img src={`${base}images/assetssource-control-repository-options.png`} alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/source-control-repository-options.png`} alt=""><figcaption></figcaption></figure>
 
 ## Method 2: Using Git in a Terminal
 

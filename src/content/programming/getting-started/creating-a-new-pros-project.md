@@ -36,7 +36,7 @@ To access options, use the `--help` flag in any pros command.&#x20;
 
 ## 2. Basic Explanation of Empty Project
 
-<figure><img src={`${base}images/assetslayout-example-new-folder.png`} alt=""><figcaption></figcaption></figure>
+<figure><img src={`${base}images/assets/layout-example-new-folder.png`} alt=""><figcaption></figcaption></figure>
 
 * If you installed clangd, you will see `.cache/~` after opening a C/C++ file. This stores data for clangd to work.&#x20;
 * `.d/` - Stores the directory information (May not be present on windows)
