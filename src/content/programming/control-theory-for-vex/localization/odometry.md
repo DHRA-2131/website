@@ -1,6 +1,6 @@
 ---
 title: "Odometry"
-description: 'Description: Using wheels and an IMU to track changes in positioning locally'
+description: 'Using wheels and an IMU to track changes in positioning locally'
 ---
 
 ## What is Odometry?
@@ -13,7 +13,7 @@ _Note: It can be even betterer, but that's for the next couple sections!_
 
 This is the most simple form of odometry that uses some simple trigonometry to calculate a change in position. Given a distance we have traveled (read from either drive motors or an odometry wheel) and the change in heading (read from an Gyro sensor), we can calculate a delta x and y position for every timestep.
 
-<div align="center"><figure><img src="/image/assets/image (2).png" alt="" width="292"><figcaption></figcaption></figure></div>
+<div align="center"><figure><img src="/images/assets/image (2).png" alt="" width="292"><figcaption></figcaption></figure></div>
 
 Based on this triangle, we can use trigonometry to calculate our change in x and y position over a timestep using the equations below:
 
@@ -31,7 +31,7 @@ _Note: Don't worry, the calculations are actually fairly simple._
 
 To begin, we must set up a circular arc representing our motions. We will use the variables below:
 
-* L - Length of the arc read from an odometry wheel or the drive base (Or both! See the [kalman-filtering.md](kalman-filtering.md "mention") page for more information)
+* L - Length of the arc read from an odometry wheel or the drive base (Or both! See the [Kalman Filtering](../kalman-filtering/ "mention") page for more information)
 * d - The distance along a chord that represents the arc, which is the distance from where the robot started to where the robot ended during the timestep
 * r - The radius of the arc
 * $$\theta_{initial}$$ - The heading at the beginning of the timestep
@@ -40,7 +40,7 @@ To begin, we must set up a circular arc representing our motions. We will use th
 
 <div data-full-width="false"><figure><img src="/images/assets/image (19).png" alt=""><figcaption><p>Diagram of the robot's motion as a circular arc</p></figcaption></figure></div>
 
-After representing the robot's motion over a timestep as an arc, it still isn't apparent how to proceed to get the $$\Delta x$$ and $$\Delta y$$ positions of the robot during the timestep. We need a target of something to solve for. That's where the chord[^1] drawn on the figure comes in handy, as if we find the distance between our starting point and end point, we can use basic trigonometry to get our robots change in x and y positions.
+After representing the robot's motion over a timestep as an arc, it still isn't apparent how to proceed to get the $$\Delta x$$ and $$\Delta y$$ positions of the robot during the timestep. We need a target of something to solve for. That's where the chord drawn on the figure comes in handy, as if we find the distance between our starting point and end point, we can use basic trigonometry to get our robots change in x and y positions.
 
 To get this distance, we first need to calculate the radius of the arc. We must first convert our theta into radians, as this allows us to use the simple arc length equation, $$L = \theta r$$, to calculate the radius. To do this, we must use the following conversion between degrees and radians:
 
@@ -82,5 +82,5 @@ There we go! Now we have fully calculated our change in position by approximatin
 
 
 
-_Not an AD: Do you wish that Horizontal Odometry was covered in this tutorial after having figured it out completely? Do you wish that the Odometry explanation was better? Are you just bored and want something to do? Please contribute!_
+_Not an AD: Do you wish that Horizontal Odometry was covered in this tutorial after having figured it out completely? Do you wish that the Odometry explanation was better? Are you just bored and want something to do? Please contribute!_ :smile:
 

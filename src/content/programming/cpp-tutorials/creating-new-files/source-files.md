@@ -1,6 +1,6 @@
 ---
 title: "Source Files (.c, .cpp)"
-description: 'Description: How to create source files.'
+description: 'How to create source files.'
 ---
 
 ## What is a Source File?

@@ -26,20 +26,14 @@ const latestBlogPost = (
             <div class="hero-left">
                 <div class="hero-lead">
                     <h1 class="title">
-                        Open-source Rust runtime for VEX robots.
+                        Davis High Robotics Association.
                     </h1>
                     <p class="subtitle">
-                        vexide provides a safe and efficient runtime and
-                        toolchain for writing VEX V5 programs in the <a
-                            href="https://rust-lang.com/"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            >Rust Programming Language</a
-                        >. 🦀
+                        Davis High School Extra-Curricular Robotics Club Wiki and Website. 2x World Champion, Davis High Robotics is worth contributing to today.
                     </p>
                 </div>
                 <div class="hero-buttons">
-                    <Button variant="accent" href="/docs2/">Learn More</Button>
+                    <Button variant="accent" href="/programming/">Programming</Button>
                     <Button
                         variant="default"
                         href={GITHUB_REPO_URL}
@@ -63,11 +57,11 @@ const latestBlogPost = (
             </div>
             <div class="hero-right">
                 <CodeExample
-                    lang="rust"
-                    filename="main.rs"
+                    lang="cpp"
+                    filename="main.cpp"
                     code={EXAMPLES[0].code}
                 />
-                <BlogCard
+                <!-- <BlogCard
                     url={`/blog/posts/${latestBlogPost.slug}/`}
                     title={latestBlogPost.data.title}
                     description={latestBlogPost.data.description}
@@ -75,7 +69,7 @@ const latestBlogPost = (
                     date={new Date(latestBlogPost.data.date)}
                     thumbnail={latestBlogPost.data.thumbnail?.url}
                     thumbnailAlt={latestBlogPost.data.thumbnail?.alt}
-                />
+                /> -->
             </div>
         </PageSection>
     </main>
@@ -90,21 +84,11 @@ const latestBlogPost = (
     }
 
     /* Background Grid */
-    /* #hero {
-		overflow: hidden;
-		display: flex;
-		justify-content: center;
-        z-index: 1;
-        border-bottom: 1px solid var(--background-secondary);
-        --grid-color: hsl(var(--base-hue), 12%, 18%);
-        background-size: 20px 20px;
-        background-image: linear-gradient(
-                to right,
-                var(--grid-color) 1px,
-                transparent 1px
-            ),
-            linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-    } */
+    #hero {
+		
+        background-size:cover  ;
+        background-image: url("../../public/images/horrible_background.jpg");
+    }
 
     #hero::before {
         content: "";
@@ -120,7 +104,7 @@ const latestBlogPost = (
 
     #hero > :global(.page-section-inner) {
         display: flex;
-        gap: 84px;
+        gap: 42px;
         max-block-size: 720px;
         padding-block: 72px;
     }
@@ -136,13 +120,19 @@ const latestBlogPost = (
     }
 
     .hero-right {
-        flex: 1 0 40%;
+        flex: 1 0 50%;
         min-inline-size: 0;
         gap: 20px;
     }
 
     .hero-lead {
         flex: 1 1 auto;
+        background-color: var(--background-secondary);
+        padding: 2rem;
+        border-radius: 10px;
+        border: solid 2px;
+        border-color: var(--background-accent-yellow);
+        margin-bottom: 30px;
     }
 
     .hero-lead .title {

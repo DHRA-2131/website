@@ -1,6 +1,6 @@
 ---
 title: "Monte Carlo Localization"
-description: 'Description: Finding position globally using distance sensors'
+description: 'Finding position globally using distance sensors'
 ---
 
 When running arc odometry, we run into two primarily problems:

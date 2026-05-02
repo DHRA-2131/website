@@ -1,6 +1,6 @@
 ---
 title: "Threading"
-description: 'Description: Running things concurrently*.'
+description: 'Running things concurrently*.'
 ---
 
 ## Computers and Shopping Lists:

@@ -37,29 +37,10 @@ const {
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- Favicon & Page Theme -->
-		<link rel="icon" type="image/svg+xml" href="/images/favicon.png" />
+		<link rel="icon" type="image/svg+xml" href="/images/favicon.jpg" />
 		<meta name="color-scheme" content="dark" />
 		<meta name="theme-color" content="#e54643" />
 
-		<!-- Preload Fonts -->
-		<!-- <link
-			rel="preload"
-			href="/fonts/Manrope-VariableFont_wght.woff2"
-			as="font"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="preload"
-			href="/fonts/iosevka-fixed_latin-ext.woff2"
-			as="font"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="preload"
-			href="/fonts/iosevka-fixed-extralight_latin-ext.woff2"
-			as="font"
-			crossorigin="anonymous"
-		/> -->
 		<link
 			rel="preload"
 			href="/fonts/FiraCode-Regular.woff2"
@@ -171,6 +152,7 @@ const {
 		--background-accent-yellow-light: hsl(var(--accent-yellow-hue), 84%, 85%);
 		--background-accent-yellow-secondary: hsl(var(--accent-yellow-hue), 32%, 23%);
 		
+
 		--grid-color: hsl(var(--base-hue), 46%, 4%);
 
 		--foreground-primary: hsl(var(--base-hue), 27%, 88%);
@@ -218,6 +200,11 @@ const {
 		padding: 0;
 	}
 
+	hr {
+		border: none;
+		border-top: 2px solid var(--background-accent-yellow);
+	}
+
 	*,
 	*::before,
 	*::after {
@@ -238,7 +225,6 @@ const {
 		tab-size: 2ch;
 		font-family: var(--font-monospace);
 	}
-
 
 	.navigation-actions .button {
 		padding-block: 8px !important;

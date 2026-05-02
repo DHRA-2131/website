@@ -1,6 +1,6 @@
 ---
 title: "Vision Odometry"
-description: 'Description: Ew... Don''t do this...'
+description: 'Ew... Don''t do this...'
 ---
 
 

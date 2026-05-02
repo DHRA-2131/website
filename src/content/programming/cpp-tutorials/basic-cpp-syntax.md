@@ -1,6 +1,6 @@
 ---
 title: "Basic C++ Syntax"
-description: 'Description: Getting started with your coding journey!'
+description: 'Getting started with your coding journey!'
 ---
 
 ## Entry Point

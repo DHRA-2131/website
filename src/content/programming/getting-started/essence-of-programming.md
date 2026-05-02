@@ -1,6 +1,6 @@
 ---
 title: 'Essence Of Programming'
-description: 'Description: Essentially how to Pseudo code'
+description: 'Essentially how to Pseudo code'
 ---
 
 ## What is Programming?

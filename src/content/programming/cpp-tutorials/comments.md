@@ -1,6 +1,6 @@
 ---
 title: "Comments"
-description: 'Description: How to add Doxygen comments and single line comments.'
+description: 'How to add Doxygen comments and single line comments.'
 ---
 
 ## Why Use Comments?

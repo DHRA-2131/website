@@ -1,6 +1,6 @@
 ---
-title: 'How Fix Clang'
-description: 'Description: Clang easily dies with PROS, but it is easy to fix.'
+title: 'How to Fix Clang'
+description: 'Clang easily dies with PROS, but it is easy to fix.'
 ---
 
 If clang is broken for your project, then follow the steps listed below. You will know clangd is not happy if errors are everywhere, despite the code compiling (`pros make all` returns successfully). You may also see a error on the first line of every file you open, this is a problem with clang not understanding your file structure.

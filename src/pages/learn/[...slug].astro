@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import LearnLayout from "layouts/LearnLayout.astro";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("learn");
+  return pages.map(page => ({
+    params: { slug: page.slug === "index" ? undefined : page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await page.render();
+---
+
+<LearnLayout page={page}>
+  <Content />
+</LearnLayout>

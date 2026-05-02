@@ -13,6 +13,22 @@ const { element: Element = "div", class: className, ...rest } = Astro.props;
 </Element>
 
 <style>
+    @import "https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css";
+
+    .markdown-body :global(mjx-container) {
+        display: none;
+    }
+
+    .markdown-body :global(.katex) {
+        line-height: 2;
+        color: var(--background-accent-yellow-light);
+        font-weight: bold;
+    }
+    
+    .markdown-body :global(.katex-mathml) {
+        display: none;
+    }
+
     .markdown-body {
         color: var(--foreground-secondary);
         font-size: 1.6rem;

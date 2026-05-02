@@ -1,6 +1,6 @@
 ---
 title: "Creating a New PROS Project"
-description: 'Description: How to create a new project for vex!'
+description: 'How to create a new project for vex!'
 ---
 
 ## 1. Create a New Empty Project

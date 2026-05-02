@@ -18,6 +18,8 @@ import mdx from '@astrojs/mdx';
 
 import remarkEmoji from "remark-emoji";
 import remarkFootnotes from "remark-footnotes";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 import { rehypeTwemoji } from "rehype-twemoji";
 
@@ -30,8 +32,9 @@ export default defineConfig({
 
 
   markdown: {
-    remarkPlugins: [remarkEmoji, remarkFootnotes],
+    remarkPlugins: [remarkEmoji, remarkFootnotes, remarkMath],
     rehypePlugins: [
+      rehypeKatex, 
       rehypeSlug,
       rehypeTwemoji,
       [rehypeAutolinkHeadings, { behavior: "append" }],

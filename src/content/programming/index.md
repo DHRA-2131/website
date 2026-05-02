@@ -1,5 +1,5 @@
 ---
 title: "Welcome to Programming"
-description: "Not very fun but worth your soul"
+description: "Not very fun but worth your soul. Contribute today of course!"
 ---
 

@@ -19,10 +19,11 @@ const blog = defineCollection({
     })
 });
 
-const docs2 = defineCollection({
+const learn = defineCollection({
     type: 'content',
     schema: z.object({
         title: z.string(),
+        description: z.string(),
         links: z.record(z.string()).optional(),
         draft: z.boolean().optional(),
     })
@@ -32,23 +33,15 @@ const programming = defineCollection({
     type: 'content',
     schema: z.object({
         title: z.string(),
+        description: z.string(),
         links: z.record(z.string()).optional(),
         draft: z.boolean().optional(),
     })
 })
 
-const releases = defineCollection({
-    type: 'content',
-    schema: z.object({
-        title: z.string(),
-        project: z.string(),
-        date: z.date(),
-    })
-});
 
 export const collections = {
-    docs2,
+    learn,
     programming,
     blog,
-    releases,
 };

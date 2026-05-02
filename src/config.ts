@@ -1,10 +1,7 @@
-export const CRATE_NAME = `vexide`;
+export const GITHUB_ORG_URL = `https://github.com/DHRA-2131`;
+export const GITHUB_REPO_URL = `${GITHUB_ORG_URL}`;
 
-export const GITHUB_ORG_URL = `https://github.com/vexide`;
-export const GITHUB_REPO_URL = `${GITHUB_ORG_URL}/vexide`;
-
-export const DISCORD_INVITE_CODE = `d4uazRf2Nh`;
-export const DISCORD_INVITE_URL = `https://discord.gg/d4uazRf2Nh`;
+export const VEX_FORUM_URL = `https://www.vexforum.com/`;
 
 export interface Example {
 	name: string;
@@ -14,18 +11,50 @@ export interface Example {
 export const EXAMPLES: Example[] = [
 	{
 		name: "Basic",
-		code: `#[vexide::main]
-async fn main(peripherals: Peripherals) {
-	// Create a green motor on port 1.
-	let mut my_motor = Motor::new(
-		peripherals.port_1,
-		Gearset::Green,
-		Direction::Forward,
-	);
+		code: `
+void start()
+  {
+    // Require that T inherits from std::enable_shared_from_this<T> to
+    // ensure that we can get a weak pointer reference to the underlying
+    // data for safe multithreading
+    static_assert(
+        std::is_base_of_v<std::enable_shared_from_this<T>, T>,
+        "Task<T> requires T to inherit from"
+        " std::enable_shared_from_this<T>");
 
-	// Spin the motor at 10 volts!
-	_ = my_motor.set_voltage(10.0);
-}`,
+    // Check that the thread is valid before starting (IE, Not default
+    // constructed)
+    if (validThread)
+    {
+      // Get a weak pointer reference to the underlying data for the task
+      std::weak_ptr<T> self = data->weak_from_this();
+
+      // Start the PROS task with a lambda that captures the weak pointer
+      task = pros::Task(
+          [&]() {
+            bool valid = true;
+
+            // While the thread is marked as valid
+            while (valid)
+            {
+              if (auto s = self.lock())
+              {
+                valid = validThread;  // Check if the thread is still valid
+                taskFunction();       // Execute the task function
+              }
+              else
+              {
+                valid = false;
+              }  // If the weak pointer can't be locked, the underlying
+                 // data has been destroyed, so exit the thread cleanly
+
+              // Delay to not hog the CPU, and to allow other tasks to run.
+              pros::delay(delayMs);
+            }
+          },
+          taskName.c_str());
+    }
+  }`,
 	},
 ];
 
@@ -60,6 +89,20 @@ export const DOCS_SIDEBAR = {
 
 	]
 };
+
+export const LEARN_SIDEBAR = {
+	"Troubleshooting & Repair":
+	[
+		{
+			title: "Brains",
+			children: [
+				"troubleshooting/add-remove-field-control",
+				"troubleshooting/fix-ports",
+				"troubleshooting/install-vex-os",
+			]
+		}
+	]
+}
 
 export const PROGRAMMING_SIDEBAR = {
 	"Getting Started": [

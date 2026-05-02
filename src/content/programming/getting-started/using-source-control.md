@@ -1,6 +1,6 @@
 ---
 title: "Using Source Control"
-description: 'Description: Basic instructions on how to use source control.'
+description: 'Basic instructions on how to use source control.'
 ---
 
 ## Source Control Overview:

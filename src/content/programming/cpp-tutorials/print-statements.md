@@ -1,6 +1,6 @@
 ---
 title: "Print Statements"
-description: 'Description: How to Print to the Terminal.'
+description: 'How to Print to the Terminal.'
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 title: "Installing an IDE"
-description: 'Description: Installing Visual Studio Code to work with Vex'
+description: 'Installing Visual Studio Code to work with Vex'
 ---
 
 An integrated development environment is a program for coding. Generally they supply a text editor and terminal to write and run code. Common editors include: Visual Studio Code, Visual Studio, Vim, NeoVim, and the various JetBrain software (PyCharm, CLion, etc). This article's objective is to install and configure Visual Studio Code for vex.

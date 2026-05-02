@@ -1,11 +1,13 @@
 ---
 title: "Header Files (.h, .hpp)"
-description: 'Description: What are header files and how do you use them?'
+description: 'What are header files and how do you use them?'
 ---
 
 ## Why? Isn't this gross?
 
-Some programmers consider header files to be annoying and over-complicated. For the most part they are right! Header Files are a relic of the C era, largely implemented due to memory constraints on 1970's computers ([Stack Overflow](https://stackoverflow.com/a/1306244), Accessed Mar. 13, 2026).&#x20;
+> [!NOTE]
+> Some programmers consider header files to be annoying and over-complicated. For the most part they are right! Header Files are a relic of the C era, largely implemented due to memory constraints on 1970's computers 
+> - ([Stack Overflow](https://stackoverflow.com/a/1306244), Accessed Mar. 13, 2026).&#x20;
 
 Header files allow for use of ready-made functions. For example, the C++ Standard Libraries `<cmath>` include adds `std::abs(x)`, so a user wouldn't have to program their own implementation. _Note: This was mostly stolen from_ [_here_](https://www.geeksforgeeks.org/cpp/header-files-in-c-c-with-examples/)_._
 
