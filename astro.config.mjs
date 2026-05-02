@@ -26,7 +26,7 @@ import { rehypeTwemoji } from "rehype-twemoji";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://vexide.dev",
+  site: "https://2131.github.io",
   trailingSlash: "always",
   integrations: [sitemap(), svelte(), markdown(), mdx()],
 
