@@ -225,12 +225,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (showingFirst) {
             bg2.style.backgroundImage = `url(${images[current]})`;
-            bg2.style.opacity = 1;
-            bg1.style.opacity = 0;
+            bg2.style.opacity = "1";
+            bg1.style.opacity = "0";
         } else {
             bg1.style.backgroundImage = `url(${images[current]})`;
-            bg1.style.opacity = 1;
-            bg2.style.opacity = 0;
+            bg1.style.opacity = "1";
+            bg2.style.opacity = "0";
         }
 
         showingFirst = !showingFirst;
