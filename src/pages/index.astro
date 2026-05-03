@@ -115,8 +115,7 @@ const latestBlogPost = (
         transition: opacity 1s ease-in-out;
     }
 
-    .bg1 { opacity: 1; };
-    }
+    .bg1 { opacity: 1; }
     .bg2 { opacity: 0; }
 
 
@@ -155,7 +154,7 @@ const latestBlogPost = (
 
     .hero-lead {
         flex: 1 1 auto;
-        background-color: color-mix(in srgb, var(--background-secondary) 95%, transparent); 
+        background-color: color-mix(in srgb, var(--background-tertiary) 90%, transparent); 
         padding: 2rem;
         border-radius: 10px;
         border: solid 2px;
@@ -214,10 +213,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let current = 0;
     let showingFirst = true;
 
-    const bg1 = document.querySelector(".bg1");
-    const bg2 = document.querySelector(".bg2");
+    const bg1 = document.querySelector<HTMLElement>(".bg1");
+    const bg2 = document.querySelector<HTMLElement>(".bg2");
 
-    if (!bg1 || !bg2) return; // safety check
+    if (!bg1 || !bg2) return;
 
     bg1.style.backgroundImage = `url(${images[0]})`;
 
