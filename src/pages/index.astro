@@ -210,6 +210,17 @@ document.addEventListener("DOMContentLoaded", () => {
         "/website/images/assets/2131H-Worlds-HS.jpg",
         "/website/images/assets/2131H-Worlds-OU.jpg",
         "/website/images/assets/2131Y-HS.jpg",
+        "/website/images/assets/2131Y_Close_Up_PB.jpg",
+        "/website/images/assets/2131Y_Descore_PB.jpg",
+        "/website/images/assets/2131Y_Front_PB.jpg",
+        "/website/images/assets/2131_Scrimage_OU.jpg",
+        "/website/images/assets/2131G_Early_Season_HS.jpg",
+        "/website/images/assets/2131G_Early_Season_HS_Back.jpg",
+        "/website/images/assets/2131G_Hang_OU.jpg",
+        "/website/images/assets/2131G_Late_Season_GPS.jpg",
+        "/website/images/assets/2131G_Late_Season_HS_Frosted.jpg",
+        "/website/images/assets/2131G_Late_Season_HS.jpg",
+        "/website/images/assets/2131G_Park_OU.jpg",
 
     ];
 
@@ -224,7 +235,8 @@ document.addEventListener("DOMContentLoaded", () => {
     bg1.style.backgroundImage = `url(${images[0]})`;
 
     setInterval(() => {
-        current = (current + 1) % images.length;
+        // current = (current + 1) % images.length;
+        const current = Math.floor(Math.random() * images.length);
 
         if (showingFirst) {
             bg2.style.backgroundImage = `url(${images[current]})`;
