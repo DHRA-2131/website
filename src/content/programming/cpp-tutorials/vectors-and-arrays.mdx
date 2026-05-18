@@ -35,10 +35,10 @@ std::vector<AutonCard> Cards = {
 ```
 
 Draw Logic:
-```
+```cpp
 // If ScreenDetector detects the button changed from released to pressed
 // or it's the inital loop (Basically if screen pressed)
-if (ScreenDetector.getChanged() &#x26;&#x26; ScreenDetector.getValue() || initial)
+if (ScreenDetector.getChanged() && ScreenDetector.getValue() || initial)
 {
   // Increment Index (This is the index that gets shown to the brain)
   index++;                    
@@ -51,7 +51,10 @@ if (ScreenDetector.getChanged() &#x26;&#x26; ScreenDetector.getValue() || initia
   // Draw the card (This calls the function to draw the card information
   // This draws the selected autonomous route's name and description
   Cards[index].draw(redTeam);  
-}
+
+  // Note: This function is kind of garbage. 
+  // Auton selectors should not take up valuable time.
+} 
 ```
 
 ***

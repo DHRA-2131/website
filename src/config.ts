@@ -13,7 +13,7 @@ export const EXAMPLES: Example[] = [
 		name: "Basic",
 		code: `
 void start()
-  {
+  {Basic
     // Require that T inherits from std::enable_shared_from_this<T> to
     // ensure that we can get a weak pointer reference to the underlying
     // data for safe multithreading
@@ -194,4 +194,25 @@ export const PROGRAMMING_SIDEBAR = {
 			]
 		},
 	],
+}
+
+export const SUMMER_CAMP_SIDEBAR = {
+	"Everyone" : [
+		// How to edit the website
+		// Organizing Team - Team practices, common pitfalls
+		// Logbooking?		
+	],
+	"Programming" : [
+		// Installing Pros
+		// First Project
+		// Driver Control
+		// Move Forwards and Backwards
+		// Turning Left and Right
+		// Using a PID Controller
+	],
+	"Building" : [
+		// Masterclass in vex videos
+		// Install the fusion library
+		// Onshape?
+	],	
 }

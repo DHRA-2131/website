@@ -1,0 +1,19 @@
+---
+import SummerCampLayout from "layouts/SummerCampLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("summercamp");
+  return pages.map(page => ({
+    params: { slug: page.slug === "index" ? undefined : page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await page.render();
+---
+
+<SummerCampLayout page={page}>
+  <Content />
+</SummerCampLayout>

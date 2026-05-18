@@ -5,7 +5,7 @@ import NavigationItem from "components/NavigationItem.astro";
 import Button from "components/Button.svelte";
 import DocsSearch from "components/DocsSearch.svelte";
 import MarkdownStyles from "components/MarkdownStyles.astro";
-import { GITHUB_ORG_URL, PROGRAMMING_SIDEBAR } from "config";
+import { GITHUB_ORG_URL, SUMMER_CAMP_SIDEBAR } from "config";
 import BaseLayout from "./BaseLayout.astro";
 import { getEntry, getCollection } from "astro:content";
 
@@ -13,7 +13,7 @@ const base = import.meta.env.BASE_URL;
 
 const { page: currentPage } = Astro.props;
 
-const all = await getCollection("programming");
+const all = await getCollection("summercamp");
 console.log(all.map(p => p.slug));
 
 type SidebarEntry = string | { title: string; children: string[] };
@@ -22,8 +22,8 @@ function flattenEntries(entries: SidebarEntry[]): string[] {
   return entries.flatMap(e => typeof e === "string" ? [e] : e.children);
 }
 
-const allPages = Object.values(PROGRAMMING_SIDEBAR).flatMap(flattenEntries);
-const currentCategory = (Object.entries(PROGRAMMING_SIDEBAR).find(([, entries]) =>
+const allPages = Object.values(SUMMER_CAMP_SIDEBAR).flatMap(flattenEntries);
+const currentCategory = (Object.entries(SUMMER_CAMP_SIDEBAR).find(([, entries]) =>
   flattenEntries(entries as SidebarEntry[]).includes(currentPage.slug)
 ) ?? ["Unknown"])[0];
 
@@ -32,8 +32,8 @@ const prevPageId = allPages[index - 1];
 const nextPageId = allPages[index + 1];
 
 const [prevPage, nextPage] = await Promise.all([
-  prevPageId ? getEntry("programming", prevPageId) : undefined,
-  nextPageId ? getEntry("programming", nextPageId) : undefined,
+  prevPageId ? getEntry("summercamp", prevPageId) : undefined,
+  nextPageId ? getEntry("summercamp", nextPageId) : undefined,
 ]);
 ---
 
@@ -56,7 +56,7 @@ const [prevPage, nextPage] = await Promise.all([
 </script>
 
 <BaseLayout
-    name="Learn Programming"
+    name="Summer Camp Tutorials"
     title={currentPage.data.title}
     description="Documentation and tutorials."
     banner={{
@@ -77,21 +77,21 @@ const [prevPage, nextPage] = await Promise.all([
             alt="Davis logo"
         />
         <span slot="title" class="navigation-docs-chip">Docs</span>
-        <NavigationItem selected href={`${base}programming/`}>Programming Documentation</NavigationItem>
+        <NavigationItem selected href={`${base}summercamp/`}>Summer Camp Documentation</NavigationItem>
         <NavigationItem href={`${base}learn/`}>General Documentation</NavigationItem>
-        <NavigationItem href={`${base}summercamp/`}>Summer Camp Documentation</NavigationItem>
+        <NavigationItem href={`${base}programming/`}>Programming Documentation</NavigationItem>
         <DocsSearch slot="right" client:load />
         <Fragment slot="mobile">
-            {Object.entries(PROGRAMMING_SIDEBAR).map(([category, entries]) => (
+            {Object.entries(SUMMER_CAMP_SIDEBAR).map(([category, entries]) => (
                 <>
                     <strong class="docs-category-label">{category}</strong>
                     <ul class="docs-category">
                         {(entries as SidebarEntry[]).map(async (entry) => {
                             if (typeof entry === "string") {
-                                const page = await getEntry("programming", entry)!;
+                                const page = await getEntry("summercamp", entry)!;
                                 return !page.data.draft && (
                                     <li class:list={["docs-sidebar-item", { selected: page.slug === currentPage.slug }]}>
-                                        <a href={page.slug === "index" ? `${base}programming/` : `${base}programming/${page.slug}/`}>
+                                        <a href={page.slug === "index" ? `${base}summercamp/` : `${base}summercamp/${page.slug}/`}>
                                             {page.data.title}
                                         </a>
                                     </li>
@@ -102,10 +102,10 @@ const [prevPage, nextPage] = await Promise.all([
                                         <span class="docs-sidebar-group-label">{entry.title}</span>
                                         <ul class="docs-sidebar-group-children">
                                             {entry.children.map(async (childEntry) => {
-                                                const page = await getEntry("programming", childEntry)!;
+                                                const page = await getEntry("summercamp", childEntry)!;
                                                 return !page.data.draft && (
                                                     <li class:list={["docs-sidebar-item", { selected: page.slug === currentPage.slug }]}>
-                                                        <a href={`${base}programming/${page.slug}/`}>
+                                                        <a href={`${base}summercamp/${page.slug}/`}>
                                                             {page.data.title}
                                                         </a>
                                                     </li>
@@ -123,16 +123,16 @@ const [prevPage, nextPage] = await Promise.all([
     </Navigation>
     <main class="docs-layout">
         <aside class="docs-sidebar">
-            {Object.entries(PROGRAMMING_SIDEBAR).map(([category, entries]) => (
+            {Object.entries(SUMMER_CAMP_SIDEBAR).map(([category, entries]) => (
                 <>
                     <strong class="docs-category-label">{category}</strong>
                     <ul class="docs-category">
                         {(entries as SidebarEntry[]).map(async (entry) => {
                             if (typeof entry === "string") {
-                                const page = await getEntry("programming", entry)!;
+                                const page = await getEntry("summercamp", entry)!;
                                 return !page.data.draft && (
                                     <li class:list={["docs-sidebar-item", { selected: page.slug === currentPage.slug }]}>
-                                        <a href={page.slug === "index" ? `${base}programming/` : `${base}programming/${page.slug}/`}>
+                                        <a href={page.slug === "index" ? `${base}summercamp/` : `${base}summercamp/${page.slug}/`}>
                                             {page.data.title}
                                         </a>
                                     </li>
@@ -143,10 +143,10 @@ const [prevPage, nextPage] = await Promise.all([
                                         <span class="docs-sidebar-group-label">{entry.title}</span>
                                         <ul class="docs-sidebar-group-children">
                                             {entry.children.map(async (childEntry) => {
-                                                const page = await getEntry("programming", childEntry)!;
+                                                const page = await getEntry("summercamp", childEntry)!;
                                                 return !page.data.draft && (
                                                     <li class:list={["docs-sidebar-item", { selected: page.slug === currentPage.slug }]}>
-                                                        <a href={`${base}programming/${page.slug}/`}>
+                                                        <a href={`${base}summercamp/${page.slug}/`}>
                                                             {page.data.title}
                                                         </a>
                                                     </li>
@@ -168,7 +168,7 @@ const [prevPage, nextPage] = await Promise.all([
                     <h1>{currentPage.data.title}</h1>
                     <Button
                         class="edit-on-github"
-                        href={`${GITHUB_ORG_URL}/website/tree/main/src/content/programming/${currentPage.id}`}
+                        href={`${GITHUB_ORG_URL}/website/tree/main/src/content/summercamp/${currentPage.id}`}
                     >
                         Edit This Page
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32">
@@ -198,7 +198,7 @@ const [prevPage, nextPage] = await Promise.all([
                         {prevPage ? (
                             <a
                                 class="page-action prev-page"
-                                href={prevPage.slug === "index" ? `${base}programming/` : `${base}programming/${prevPage.slug}/`}
+                                href={prevPage.slug === "index" ? `${base}summercamp/` : `${base}summercamp/${prevPage.slug}/`}
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                                     <path d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z" />
@@ -214,7 +214,7 @@ const [prevPage, nextPage] = await Promise.all([
                         {nextPage ? (
                             <a
                                 class="page-action next-page"
-                                href={nextPage.slug === "index" ? `${base}programming/` : `${base}programming/${nextPage.slug}/`}
+                                href={nextPage.slug === "index" ? `${base}summercamp/` : `${base}summercamp/${nextPage.slug}/`}
                             >
                                 <div class="page-action-contents">
                                     Next

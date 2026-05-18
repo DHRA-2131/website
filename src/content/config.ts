@@ -39,9 +39,19 @@ const programming = defineCollection({
     })
 })
 
+const summercamp = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        links: z.record(z.string()).optional(),
+        draft: z.boolean().optional(),
+    })
+})
 
 export const collections = {
     learn,
     programming,
+    summercamp,
     blog,
 };

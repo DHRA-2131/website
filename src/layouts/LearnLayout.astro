@@ -82,6 +82,7 @@ const [prevPage, nextPage] = await Promise.all([
         <span slot="title" class="navigation-docs-chip">Docs</span>
         <NavigationItem selected href={`${base}learn/`}>General Documentation</NavigationItem>
         <NavigationItem href={`${base}programming/`}>Programming Documentation</NavigationItem>
+        <NavigationItem href={`${base}summercamp/`}>Summer Camp Documentation</NavigationItem>
         <DocsSearch slot="right" client:load />
         <Fragment slot="mobile">
             {Object.entries(LEARN_SIDEBAR).map(([category, entries]) => (
